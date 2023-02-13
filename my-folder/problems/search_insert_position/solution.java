@@ -1,21 +1,24 @@
 class Solution {
     public int searchInsert(int[] nums, int target) {
-        int end=nums.length-1,start=0;
-        int mid=(start+end)/2;
-        while(start<=end){
-            System.out.println(mid);
-            if(nums[mid]==target){
-                return mid;
-            }
-            if(nums[mid]<target)
-                    start=mid+1;
-            else
-                end=mid-1;
-            mid=(start+end)/2;
+       return  search(nums, target, 0 , nums.length-1);
+    }
+    public int search(int[] nums, int target, int st, int end){
+        int mid = (st + end)/2;
+        if((st == end || st > end) && nums[mid] != target ){
+            if(target > nums[st])
+                return st +1;
+            else 
+                return st;
         }
-        if(target>nums[mid]){
-            return mid+1;
+        else if(nums[mid] == target)
+            return mid;
+        else if(nums[mid] > target ){
+            System.out.println(st);
+                        System.out.println(mid-1);
+
+            return search(nums, target, st , mid-1);
         }
-        return mid;
+        else 
+            return search(nums, target, mid+1, end);
     }
 }
