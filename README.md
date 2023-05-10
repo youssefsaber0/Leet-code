@@ -1,2 +1,3 @@
 
-Solution uploaded using sync leetCode (repo)[https://github.com/joshcai/leetcode-sync]
+Solution uploaded using
+<a href="[doc:introduction](https://github.com/joshcai/leetcode-sync)" target="_blank">sync leetCode repo</a>
